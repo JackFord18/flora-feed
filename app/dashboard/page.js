@@ -2,7 +2,7 @@
 import MoistureGraph from '@/ui/MoistureGraph';
 import React, { useEffect, useState } from 'react'
 
-export default function page() {
+export default function DashboardPage() {
     const [data, setData] = useState([]);
     useEffect(() => {
         fetch('/api/moistureReadings')

@@ -1,113 +1,80 @@
 import Image from "next/image";
+import fullSetup from "../public/setupImages/fullSetup.jpg";
+
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="flex flex-1 space-x-10 mx-10 pb-10 max-w-[100%]">
+      <div className="bg-slate-100 px-5 py-5 space-y-10 rounded-xl h-fit">
+        <div>
+          <h1 className="text-xl text-center">
+            Welcome to Flora Feed!
+          </h1>
+          <p>
+            Flora Feed is a project that combines two of my passions- nature and technology- to make life a 
+            little bit easier! With Flora Feed, I can remotely check my basil plant&apos;s moisture levels to 
+            determine whether or not it needs to be watered soon. I love applying technical solutions to practical 
+            problems, so this has been a blast to make so far! Keep reading to learn about how this project works 
+            under the hood or <a className="text-green-600 underline" href="/dashboard">check out the dashboard</a> to see the current moisture levels 
+            of my basil plant!
+            
+          </p>
+        </div>
+        <div className="space-y-5">
+          <div>
+            <h1 className="text-xl text-center">
+              How does this project work?
+            </h1>
+            <p>
+              Flora Feed can be broken down into a few different main components- software, hardware, and infrastructure. 
+              Let&apos;s dive in!
+            </p>
+          </div>
+          <div>
+            <h2 className="text-xl">
+              Hardware
+            </h2>
+            <p>
+              Being a software engineer, I don&apos;t get to interact with hardware during my regular work as much as I 
+              would like to, and this project was a great oportunity for me to branch out and explore this other side of 
+              the tech world! The setup for this project is a bit rudamentary, but it gets the job done. I am using an 
+              old Raspberry Pi 4 Model B that I&apos;ve had sitting around and I wired it up to a capacitive moisture 
+              sensor via a breadboard.
+            </p>
+          </div>
+          <div>
+            <h2 className="text-xl">
+              Software
+            </h2>
+            <p>
+              To make this project possible, I wrote a quick Python script to read data from the moisture sensor mentioned 
+              above, which is sent via an HTTP POST request to a Java (Spring Boot) backend that authenticates the request 
+              and then persists the the moisture reading data in a MySQL database. To display the info, the front-end (what 
+              you are looking at right now) is built using Next.js and Tailwind CSS! I am planning to use a 
+              microservice-focused architecture to enable scalability, optimization, and fault tolerance on this project as 
+              it expands. This will also help me easily swap out service implementations whenever needed. 
+              
+            </p>
+          </div>
+          <div>
+            <h2 className="text-xl">
+              Infrastructure
+            </h2>
+            <p>
+              To really bring this project to life, I wanted to make this project available to the public! All of the 
+              components are hosted on a Digital Ocean droplet.
+            </p>
+          </div>
+          
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="rounded-xl flex-shrink-0 overflow-hidden aspect-[3/4] relative">
+          <Image 
+            src={fullSetup} fill 
+            alt={"A Raspberry Pi 4 Model B wired via a breadboard to a capacitive moisture sensor stuck in a basil plant's soil"}
+          />
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
 }
+

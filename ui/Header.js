@@ -18,7 +18,7 @@ export default function Header({title}) {
     }, []);
 
   return (
-    <div className='h-20 flex pl-20 space-x-2'>
+    <div className='h-20 flex flex-shrink-0 pl-20 space-x-2'>
             <Link href='/' className='flex h-full items-center w-2/3 text-2xl'>
                     Flora
                 <div className='h-[65%] aspect-square relative mt-[-17px]'>

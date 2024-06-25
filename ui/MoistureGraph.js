@@ -28,6 +28,7 @@ export default class MoistureGraph extends PureComponent {
       labelFormatter={(value) => {
         return new Date(value).toLocaleString('en-US');
       }}
+      position={{y: 235}} 
       />
       <Legend />
       <ReferenceLine y={this.props.maxSafeMoisture} stroke="red" label={{value: "Too wet", position: "top"}} />

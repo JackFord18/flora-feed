@@ -13,7 +13,7 @@ export default function HeaderButton({content, link, newTab, selected, onClick})
         <Link 
             href={link} 
             target={`${newTab ? '_blank' : '_self'}`}
-            onClick={() => !newTab && onClick(content)} 
+            onClick={() => !newTab && onClick(link)} 
         >
             {content}
         </Link>

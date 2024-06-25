@@ -3,11 +3,14 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
+import { usePathname } from 'next/navigation'
 import HeaderButton from './HeaderButton';
 
 export default function Header({title}) {
+    const pathname = usePathname();
+
     const [plantIconSource, setPlantIconSource] = useState();
-    const [selectedTab, setSelectedTab] = useState("Home");
+    const [selectedTab, setSelectedTab] = useState(pathname);
 
     const headerButtons = [
         {
@@ -52,8 +55,8 @@ export default function Header({title}) {
                     content={button.content} 
                     link={button.link} 
                     newTab={button.newTab}
-                    selected={selectedTab === button.content} 
-                    onClick={(content) => setSelectedTab(content)}
+                    selected={selectedTab === button.link} 
+                    onClick={(link) => setSelectedTab(link)}
                 />)
             }
         </div>

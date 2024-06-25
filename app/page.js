@@ -5,6 +5,7 @@ import fullSetup from "../public/setupImages/fullSetup.jpg";
 export default function Home() {
   return (
     <div className="my-2 md:my-5">
+      <title>Flora Feed · Home</title>
       <div className="flex flex-1 space-x-10 mx-10">
         <div className="px-5 space-y-10 rounded-xl h-fit md:basis-2/3">
           <div>

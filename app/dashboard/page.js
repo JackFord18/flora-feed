@@ -17,6 +17,7 @@ export default function DashboardPage() {
       }, []);
   return (
     <div className='flex my-2 md:my-5 justify-center'>
+        <title>Flora Feed · Dashboard</title>
         <div className='w-full md:w-4/5 h-72 flex flex-col px-1 rounded-xl'>
             <p className='text-xl text-center'>
                 Soil Moisture

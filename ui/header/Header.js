@@ -3,9 +3,27 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
+import HeaderButton from './HeaderButton';
 
 export default function Header({title}) {
     const [plantIconSource, setPlantIconSource] = useState();
+    const [selectedTab, setSelectedTab] = useState("Home");
+
+    const headerButtons = [
+        {
+            content: "Home",
+            link: "/"
+        },
+        {
+            content: "Dashboard",
+            link: "/dashboard"
+        },
+        {
+            content: "GitHub",
+            link: "https://github.com/JackFord18/flora-feed",
+            newTab: true
+        }
+    ]
 
     useEffect(() => {
         async function fetchPlantIcon() {
@@ -29,15 +47,15 @@ export default function Header({title}) {
             </Link>
         </div>
         <div className='flex h-10 md:flex-1 md:justify-end md:items-center md:h-full md:space-x-24'>
-            <Link href='/' className='flex flex-1 items-center justify-center text-center md:w-fit md:flex-none'>
-                Home
-            </Link>
-            <Link href='/dashboard' className='flex flex-1 items-center justify-center text-center md:w-fit md:flex-none'>
-                Dashboard
-            </Link>
-            <Link href={"https://github.com/JackFord18/flora-feed"} target='_blank' className='flex flex-1 items-center justify-center text-center md:w-fit md:flex-none'>
-                GitHub
-            </Link>
+            {headerButtons.map(button => 
+                <HeaderButton 
+                    content={button.content} 
+                    link={button.link} 
+                    newTab={button.newTab}
+                    selected={selectedTab === button.content} 
+                    onClick={(content) => setSelectedTab(content)}
+                />)
+            }
         </div>
         
     </div>

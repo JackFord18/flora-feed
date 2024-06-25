@@ -17,10 +17,8 @@
 }
 
 body {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;}
-
+  background-color: rgb(241, 245, 249);
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;

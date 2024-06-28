@@ -57,7 +57,7 @@ export default function Home() {
               <p>
                 To make this project possible, I wrote a quick Python script to read data from the moisture sensor mentioned 
                 above, which is sent via an HTTP POST request to a Java (Spring Boot) backend that authenticates the request 
-                and then persists the the moisture reading data in a MySQL database. To display the info, the front-end (what 
+                and then persists the moisture reading data in a MySQL database. To display the info, the front-end (what 
                 you are looking at right now) is built using Next.js and Tailwind CSS! I am planning to use a 
                 microservice-focused architecture to enable scalability, optimization, and fault tolerance on this project as 
                 it expands. This will also help me easily swap out service implementations whenever needed. 

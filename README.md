@@ -1,36 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Welcome to the Flora Feed GitHub!
+Flora Feed is the front-end component to a hobby project of mine created with the goal of helping me efficiently water my plants. At the moment, the project is just set up to monitor my basil plant but I would like to expand it to many more of my plants in the future!
 
-## Getting Started
+Head over to the website [here](https://www.florafeed.jackford.tech/) to check out this code in action and read about end-to-end implementation details, or read on to learn more about the details of this specific repo!
 
-First, run the development server:
+## How does this project work?
+Flora Feed is a mobile-first responsive Next.js app that uses Tailwind CSS for styling, manually hosted on a DigitalOcean droplet! To retrieve the displayed soil moisture data, Flora Feed communicates with a [Java/Spring Boot backend](https://github.com/JackFord18/water-watcher). To support SSL, this repo includes a configured Nginx reverse proxy. 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+To enhance portability and ease of deployment, the Next.js app and Nginx reverse proxy are both individually dockerized into separate containers and collectively managed using Docker Compose.

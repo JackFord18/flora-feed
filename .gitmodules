@@ -1,0 +1,3 @@
+[submodule ".ssl-secrets"]
+	path = .ssl-secrets
+	url = https://github.com/JackFord18/flora-feed-ssl-secrets.git

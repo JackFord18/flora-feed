@@ -17,7 +17,7 @@ export default class MoistureGraph extends PureComponent {
       <ResponsiveContainer>
         <LineChart data={this.props.data}>
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis scale='time' interval={'equidistantPreserveStart'} 
+      <XAxis scale='time' interval={'equidistantPreserveStart'} type="timestamp"
         dataKey="timestamp" padding={{ left: 30, right: 30 }} 
         tickFormatter={(value) => {
             return new Date(value).toLocaleString('en-US');

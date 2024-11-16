@@ -3,12 +3,13 @@ import loadingAnimation from '@/public/lottie/loading.json';
 import MoistureGraph from '@/ui/MoistureGraph';
 import DateTimePicker from '@/ui/form/DateTimePicker';
 import { isValidDateTime, getRepairedDateTimeString, parseDateTimeString, parseDateTimeStringAsISO } from '@/utils/dateUtils';
-import Lottie from "lottie-react";
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
 export default function DashboardPage() {
+  const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
   const searchParams = useSearchParams()
   const router = useRouter();
   const pathname = usePathname();
@@ -31,7 +32,6 @@ export default function DashboardPage() {
   const [endDateTime, setEndDateTime] = useState(() => getInitialDateTimeString('endDateTime', 0));
   const [data, setData] = useState([]);
   const [imageUrl, setImageUrl] = useState();
-
 
   const syncQueryParams = () => {
     const params = new URLSearchParams(searchParams.toString());

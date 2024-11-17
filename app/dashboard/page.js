@@ -1,9 +1,7 @@
 'use client';
-import loadingAnimation from '@/public/lottie/loading.json';
 import MoistureGraph from '@/ui/MoistureGraph';
 import DateTimePicker from '@/ui/form/DateTimePicker';
 import { isValidDateTime, getRepairedDateTimeString, parseDateTimeString, parseDateTimeStringAsISO } from '@/utils/dateUtils';
-import Lottie from "lottie-react";
 import Image from 'next/image';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
@@ -97,22 +95,16 @@ export default function DashboardPage() {
           </div>
         </div>
         <div className='flex justify-center align-middle'>
-          {
-            imageUrl ? 
-            <div className='relative w-11/12 md:w-1/2 aspect-video rounded-lg overflow-hidden'>
-              <Image
-                src={imageUrl}
-                layout="fill"
-                objectFit='contain'
-              />
-            </div>
-            :
-            <Lottie
-              animationData={loadingAnimation}
-              className="w-1/2 md:w-3/12"
-              loop={true}
-            />
-          }
+            {
+              imageUrl && 
+              <div className='relative w-11/12 md:w-1/2 aspect-video rounded-lg overflow-hidden'>
+                <Image
+                  src={imageUrl}
+                  layout="fill"
+                  objectFit='contain'
+                />
+              </div>
+            }
         </div>
       </div>
     </div>

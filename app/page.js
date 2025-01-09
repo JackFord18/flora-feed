@@ -75,7 +75,7 @@ export default function Home() {
               <p>
                 To really bring this project to life, I wanted to make this project available to the public! The frontend, backend, 
                 and database are all hosted on a DigitalOcean droplet, though I hope to separate these out in more efficient ways 
-                in the future!
+                in the future! I also rely on AWS S3 for image storage and retrieval.
               </p>
             </div>
           </div>

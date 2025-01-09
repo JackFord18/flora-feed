@@ -54,10 +54,11 @@ export default function Home() {
                 Software
               </h2>
               <p>
-                To make this project possible, I wrote a quick Python script to read data from the moisture sensor and take 
-                a picture with the camera mentioned above, which are then both sent via HTTP POST requests to their respective Java 
-                (Spring Boot) based microservices, which authenticate the requests and then persist the moisture reading data in 
-                a MySQL database and the photo to AWS S3 storage.
+                To make this project possible, I wrote a Python script that reads data from the moisture sensor and takes 
+                a picture with the camera mentioned above at the top of every hour (via a scheduled cron job). These are 
+                then both sent via HTTP POST requests to their respective Java (Spring Boot) based microservices, which 
+                authenticate the requests using API keys and then, upon successful authentication, persist the moisture 
+                reading data in a MySQL database and the photo to AWS S3 storage.
                 <br/><br/>
                 The front-end (what you are looking at right now) is built using Next.js and Tailwind 
                 CSS in conjunction with NGINX and Docker! To retrieve the data to be displayed, it makes HTTP GET requests to endpoints 

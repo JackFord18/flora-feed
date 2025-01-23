@@ -25,7 +25,7 @@ export default function DashboardPage() {
     return parseDateTimeString(initialDateTimeParamString ? initialDateTimeParamString : initialDateTime);
   }
   
-  const [startDateTime, setStartDateTime] = useState(() => getInitialDateTimeString('startDateTime', 1));
+  const [startDateTime, setStartDateTime] = useState(() => getInitialDateTimeString('startDateTime', 14));
   const [endDateTime, setEndDateTime] = useState(() => getInitialDateTimeString('endDateTime', 0));
   const [data, setData] = useState([]);
   const [imageUrl, setImageUrl] = useState();

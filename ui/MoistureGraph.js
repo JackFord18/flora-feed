@@ -31,9 +31,10 @@ export default class MoistureGraph extends PureComponent {
       position={{y: 235}} 
       />
       <Legend />
-      <ReferenceLine y={this.props.maxSafeMoisture} stroke="red" label={{value: "Too wet", position: "top"}} />
+      <ReferenceLine y={this.props.maxSafeMoisture} stroke="red" label={{value: "Too wet", position: "insideBottomLeft"}} />
       <Line name={"Moisture"} type="monotone" dataKey="moisture" stroke="#5fc75b" dot={false} strokeWidth={5} />
-      <ReferenceLine y={this.props.minSafeMoisture} stroke="red" label={{value: "Too dry", position: "bottom"}} />
+      <ReferenceLine y={this.props.minSafeMoisture} stroke="red" label={{value: "Too dry", position: "insideBottomLeft"}} />
+      <ReferenceLine y={this.props.winterMoistureGoal} stroke="blue" label={{value: "Winter moisture goal", position: "insideBottomLeft"}} />
     </LineChart>
       </ResponsiveContainer>
     );

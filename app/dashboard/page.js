@@ -90,7 +90,7 @@ export default function DashboardPage() {
               <MoistureGraph maxSafeMoisture={60} minSafeMoisture={15} winterMoistureGoal={5} data={data}/>
           </div>
           <div className='flex flex-col md:flex-row md:justify-center items-center md:space-x-7 space-y-2 md:space-y-0'>
-            <DateTimePicker text='Start Date' value={startDateTime} onChange={setStartDateTime} typeable={false}/>
+            <DateTimePicker text='Start Date' value={startDateTime} onChange={setStartDateTime} typeable={false} min={"2024-11-12T00:00"}/>
             <DateTimePicker text='End Date' value={endDateTime} min={getMinEndDate(startDateTime)} onChange={setEndDateTime} typeable={false}/>
           </div>
         </div>

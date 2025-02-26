@@ -41,7 +41,7 @@ export default function Header({title}) {
   return (
     <div className='border-solid border-b-2 sticky top-0 bg-white z-10 md:flex md:h-16 md:w-full md:pt-0 md:px-10'>
         <div className='h-9 flex justify-center pt-1 md:h-full md:pt-1'>
-            <Link href='/' className='flex justify-center items-center text-2xl'>
+            <Link href='/' className='flex justify-center items-center text-2xl' onClick={() => setSelectedTab("/")}>
                 Flora
                 <div className='h-2/3 md:h-1/2 aspect-square relative'>
                     {plantIconSource && <Image src={plantIconSource} alt='plant' fill/>}
